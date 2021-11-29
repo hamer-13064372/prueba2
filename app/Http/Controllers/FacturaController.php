@@ -35,6 +35,7 @@ class FacturaController extends Controller
              
             $detalle->id_fact=$fact->id;
             $detalle->id_prod=$det['idprod'];
+            
             $detalle->precio=$det['precio'];
             $detalle->cant=$det['cant'];
             $detalle->fecha=$det['fecha'];
