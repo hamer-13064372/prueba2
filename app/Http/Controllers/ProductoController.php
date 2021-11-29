@@ -17,13 +17,13 @@ class ProductoController extends Controller
 
     public function store(Request $request) {
         $producto= new Producto();
-        $producto->cod_producto=$request->cod_prod;
+        $producto->cod_prod=$request->codProd;
         $producto->nombre=$request->nombre;
         $producto->precio=$request->precio;
         $producto->cantidad=$request->cant;
-        $producto->tipo_servicio=$request->tipo_serv;
+        $producto->tipo_ser=$request->tipoServ;
         $producto->stock=$request->stock;
-        $producto->fecha_vencimiento=$request->fec_venc;
+        $producto->fecha_venc=$request->fecVenc;
         $producto->estado=$request->edo;
 
         $producto->save();
@@ -31,13 +31,13 @@ class ProductoController extends Controller
 
     public function update(Request $request) {
         $producto= Producto::findOrFail($request->id);
-        $producto->cod_producto=$request->cod_prod;
+        $producto->cod_prod=$request->codProd;
         $producto->nombre=$request->nombre;
         $producto->precio=$request->precio;
         $producto->cantidad=$request->cant;
-        $producto->tipo_servicio=$request->tipo_serv;
+        $producto->tipo_serv=$request->tipoServ;
         $producto->stock=$request->stock;
-        $producto->fecha_vencimiento=$request->fec_venc;
+        $producto->fecha_venc=$request->fecVenc;
         $producto->estado=$request->edo;
 
         $producto->save();
@@ -47,5 +47,12 @@ class ProductoController extends Controller
     public function destroy(Request $request) {
         $producto= Producto::findOrFail($request->id);
         $producto->delate();
+    }
+
+    public function getProducto(Request $request) {
+        $edo=$request->edo;
+        $producto= Producto::select('id','nombre')->where('estado',$edo)->get();
+
+        return ['prod'=>$producto];
     }
 }
