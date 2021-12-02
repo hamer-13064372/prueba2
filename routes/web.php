@@ -38,7 +38,7 @@ Route::get('/api/producto',[ProductoController::class,'index']);
 Route::post('/api/producto/registrar',[ProductoController::class,'store']);
 Route::get('/api/producto/getProd',[ProductoController::class,'getProducto']);
 Route::put('/api/producto/actualizar',[ProductoController::class,'update']);
-Route::delete('/api/producto/eliminar',[ProductoController::class,'destroy']);
+Route::post('/api/producto/eliminar',[ProductoController::class,'destroy']);
 
 
 
@@ -47,7 +47,7 @@ Route::delete('/api/producto/eliminar',[ProductoController::class,'destroy']);
 Route::get('/api/obsequio',[ObsequioController::class,'index']);
 Route::post('/api/obsequio/registrar',[ObsequioController::class,'store']); 
 Route::put('/api/obsequio/actualizar',[ObsequioController::class,'update']);
-Route::delete('/api/obsequio/eliminar',[ObsequioController::class,'destroy']);  
+Route::post('/api/obsequio/eliminar',[ObsequioController::class,'destroy']);  
 
 
             //RUTAS CREDITO

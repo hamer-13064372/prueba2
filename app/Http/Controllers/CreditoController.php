@@ -18,13 +18,13 @@ class CreditoController extends Controller
     }
 
     public function store(Request $request) {
-        $cred= new Credito();
-        $cred->valor=$request->valor;
-        $cred->estado=$request->edo;
+        $credito= new Credito();
+        $credito->valor=$request->valor;
+        $credito->estado=$request->edo;
 
-        $cred->id_clien=$request->idClien;
+        $credito->id_clien=$request->idClien;
 
-        $cred->save();
+        $credito->save();
     }
    
     

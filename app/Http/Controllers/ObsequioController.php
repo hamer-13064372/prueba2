@@ -20,14 +20,14 @@ class ObsequioController extends Controller
     public function store(Request $request) {
 
         
-        $obseq= new Obsequio();
-        $obseq->fecha=$request->fecha;
-        $obseq->valor_obs=$request->valorObs;
-        $obseq->estado=$request->edo;
+        $obsequio= new Obsequio();
+        $obsequio->fecha=$request->fecha;
+        $obsequio->valor_obs=$request->valorObs;
+        $obsequio->estado=$request->edo;
 
-        $obseq->id_prod=$request->idProducto;
+        $obsequio->id_prod=$request->idProducto;
 
-        $obseq->save();
+        $obsequio->save();
     } 
     
 }
